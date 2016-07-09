@@ -1,0 +1,87 @@
+[ Assignment 2 ]
+Team: Alan Chin, Hubert Hsiung
+CPU: Intel Core i7-3517U @ 1.9GHz (2 Cores, 4 Threads)
+
+[ Cornell 512x512 ] (100 samples/pixel, 2 bounces) 512x512
+Time: 65.408s (Multi-threaded)
+BVH Nodes: 11 (5 non-leaf nodes, 6 leaf nodes)
+# Rays: 28573696
+Ray-box Intersections: 68709113
+Ray-triangle Intersections: 81435334
+
+[ Cornell 512x512 ] (10 samples/pixel, 2 bounces)
+Time: 7.082s (Multi-threaded)
+BVH Nodes: 11 (5 non-leaf nodes, 6 leaf nodes)
+# Rays: 2621440
+Ray-box Intersections: 6736466
+Ray-triangle Intersections: 8131199
+
+[ Sponza 512x512 ] (16 samples/pixel, 2 bounces)
+Time: 108.177s (Multi-threaded)
+BVH Nodes: 24425 (12212 non-leaf nodes, 12213 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 12330703
+Ray-triangle Intersections: 45253348
+
+[ Teapot 512x512 ] (No sampling, no bounces, NO hard shadows)
+Time: 0.256s (Multi-threaded)
+BVH Nodes: 205 (102 non-leaf nodes, 103 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 255973
+Ray-triangle Intersections: 337923
+
+[ Teapot 512x512 ] (No sampling, no bounces, WITH hard shadows)
+Time: 0.722s
+BVH Nodes: 205 (102 non-leaf nodes, 103 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 478610
+Ray-triangle Intersections: 346714
+
+[ (1) Bunny 512x512 ] (No sampling, no bounces, NO hard shadows)
+Time: 0.186s (Multi-threaded)
+BVH Nodes: 23883 (11941 non-leaf nodes, 11942 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 225070
+Ray-triangle Intersections: 231467
+
+[ (1) Bunny 512x512 ] (No sampling, no bounces, WITH hard shadows)
+Time: 2.120s (Multi-threaded)
+BVH Nodes: 23883 (11941 non-leaf nodes, 11942 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 444439
+Ray-triangle Intersections: 232749
+
+[ (20) Bunnies 128x128 ] (No sampling, no bounces, NO hard shadows)
+Time: 0.159s (Multi-threaded) (Long pre-calc!)
+BVH Nodes: 478369 (239184 non-leaf nodes, 239185 leaf nodes)
+# Rays: 262144
+Ray-box Intersections: 16368
+Ray-triangle Intersections: 34010
+
+[ (20) Bunnies 512x512 ] (No sampling, no bounces, NO hard shadows)
+Time: 1.302s (Multi-threaded) (Long pre-calc!)
+BVH Nodes: 478369 (239184 non-leaf nodes, 239185 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 261706
+Ray-triangle Intersections: 543401
+
+[ (20) Bunnies 512x512 ] (No sampling, no bounces, WITH hard shadows)
+Time: 66.352s (Multi-threaded) (Long pre-calc!)
+BVH Nodes: 478369 (239184 non-leaf nodes, 239185 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 495449
+Ray-triangle Intersections: 551048
+
+[ Sponza 512x512 ] (No sampling, no bounces, NO hard shadows)
+Time: 1.728s (Multi-threaded)
+BVH Nodes: 24425 (12212 non-leaf nodes, 12213 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 260852
+Ray-triangle Intersections: 988871
+
+[ Sponza 512x512 ] (No sampling, no bounces, WITH hard shadows)
+Time: 59.965s (Multi-threaded)
+BVH Nodes: 24425 (12212 non-leaf nodes, 12213 leaf nodes)
+# Rays: 4194304
+Ray-box Intersections: 523153
+Ray-triangle Intersections: 1091317

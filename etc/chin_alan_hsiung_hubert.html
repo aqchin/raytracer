@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>Rendering Final Project</title>
+</head>
+
+<body>
+<center>
+	<h1>CSE 168: Final Rendering Project!</h1>
+	<h3>by Alan Chin & Hubert Hsiung</h3>
+</center>
+
+<hr>
+
+<h2>Overview</h2>
+<P>
+In this project, we implement Photon Mapping and Depth of Field.
+The scene we selected is the infamous Cornell Box with three spheres with
+each of the following properties: diffuse, reflection, and refraction.
+We configure the Depth of Field to focus on the diffuse ball in the center
+while two others are placed in front of and behind it.
+</P>
+
+<h2>Progress</h2>
+<P>
+In our approach to Photon Mapping, we start by accumulating the Photon Map.
+For each light in the scene, we continuously shoot out photons into the scene
+until a specified number of them are stored in the scene. This process can
+take a fairly significant amount of time, especially if the light source is
+not enclosed in an environment. We take the Russian Roulette approach to 
+handle how photons are stored or reflected in the environment. By using this,
+instead of scaling the photon per reflection, we keep the reserve the same
+amount of power until the map is filled. In order to attain indirect
+lighting, we multiply the power of the photon by the color of the surface
+when it reflects. After filling the photon map, we scale all the photons down
+by the total number of photons emitted.
+<BR><BR>
+The next step is applying the photons to the scene. For each pixel, we estimate
+the color based on the surrounding photons.
+</P>
+
+<center>
+<table>
+<tr>
+<td>
+<img src="teapot_1mil_,5r_500g_36spp_1bounce.png" height=200>
+<td>
+<img src="teapot_50kP_4r_2000g_24spp_1bounce.png" height=200>
+<td>
+<img src="teapot_100k_2r_500g_36spp_1bounce_200W.png" height=200>
+<td>
+<img src="teapot_100milP_,1r_50g_24spp_1bounce.png" height=200>
+</table>
+</center>
+
+<BR>
+<P>
+After working on Photon Mapping, we decided to add Depth of Field to our
+scene. This was a fairly straightforward modification to our camera. What we
+do is define an aperture value in addition to a focus length which
+essentially defines the blur intensity and viewing plane, respectively.
+With each pixel, we sample some amount of random rays shot through the
+aperture and we average that value sort of like with path tracing. Below is
+the result of Depth of Field. Looking closely, the most obvious blurred area is the end of the plane, although some areas of the teapot show some
+degree of blur.
+</P>
+<center><img src="blur.png" height=300></center>
+
+<BR>
+<P>
+Next, we move to the creative aspect of the assignment which is creating a
+scene. In order to demonstrate the best aspects of the techniques we have
+implemented, we decided to use the Cornell Box. Below is an image of the
+scene in its work stages. This is done with no photon mapping, and contains
+one reflecting and one refracting ball.
+</P>
+<center><img src="test.png" height=300></center>
+
+<P>
+With careful planning and coordination, we eventually get an image like
+below. This one does use photon mapping. This eventually leads up to our final image displayed at the very bottom.
+</P>
+<center><img src="opgg.png" height=300></center>
+
+<BR>
+<hr>
+<h2>Final Image</h2>
+<center><img src="final.png" height=512></center>
+
+<h3>Stats</h3>
+
+<UL>
+<LI> 15 Million Photons Mapped
+<LI> 128 Samples per Pixel
+<LI> 1024x1024 Resolution
+</UL>
+
+</body>
+</html>
